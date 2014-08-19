@@ -1,6 +1,6 @@
 <?php
 
-	//Primer Commit, modulo de usuarios terminado POO.
+	//Primer Commit, modulo de usuarios terminado.
 
 class Admin_UsersController extends \BaseController {
 
@@ -72,6 +72,8 @@ class Admin_UsersController extends \BaseController {
 	public function show($id)
 	{
 		
+/*		Ventana Muestra Contenido Del Usuario Creado
+*/
 		$iduser = User::find($id);
 		return View::make('admin/users/show')->with('iduser', $iduser);
 
