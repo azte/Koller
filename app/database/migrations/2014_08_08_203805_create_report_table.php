@@ -23,7 +23,7 @@ class CreateReportTable extends Migration {
             $table->string('type');
             $table->string('subtype');
 
-             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
 			$table->timestamps();
         });	}

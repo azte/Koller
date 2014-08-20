@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{route('home')}}">Home</a></li>
-        <li><a href="{{route('reports')}}">Reportes</a></li>
+        <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
         <li><a href="{{route('admin.users.index')}}">Admin</a></li>
 
       </ul>
@@ -54,6 +54,8 @@
  @yield('users')
  @yield('formUsers')
  @yield('showUsers')
+ @yield('formReport')
+
 
 <div class="container">
     

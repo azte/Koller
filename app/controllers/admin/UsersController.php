@@ -72,7 +72,7 @@ class Admin_UsersController extends \BaseController {
 	public function show($id)
 	{
 		
-/*		Ventana Muestra Contenido Del Usuario Creado
+/*		Ventana Muestra Contenido After Create User
 */
 		$iduser = User::find($id);
 		return View::make('admin/users/show')->with('iduser', $iduser);
@@ -164,6 +164,10 @@ class Admin_UsersController extends \BaseController {
             return Redirect::route('admin.users.index');
         }
     }
+
+
+
+
 
 
 }

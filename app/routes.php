@@ -29,3 +29,5 @@ Route::get('reports', array('as' => 'reports', function()
 
 
 Route::resource('admin/users', 'Admin_UsersController');
+
+Route::resource('admin/reports', 'Admin_ReportsController');
