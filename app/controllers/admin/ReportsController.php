@@ -9,19 +9,21 @@ class Admin_ReportsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('admin/reports/reports');
+
+		$reports = Report::all();
+		return View::make('admin/reports/reports')->with('reports', $reports);
 	
 	}
 
 
-	/**
+	/**s
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		return View::make('admin/reports/form');
+		return View::make('admin/reports/reports');
 	}
 
 
@@ -40,20 +42,10 @@ class Admin_ReportsController extends \BaseController {
 			$report->fill($data);
 			$report->save();
 
-
-		      /*$user_id = User::find(3);
-		      $id = $user_id->id;
-
-		      $data = array(intval(Input::get('user_id')));
+			return Redirect::route('admin.reports.index')->with('report',$report);
 
 
-		      
-		      
 
-		      $report->fill($data);
-		      $report->save();
-
-*/
 	}
 
 
