@@ -10,18 +10,17 @@ class AddRemembertoken extends Migration {
 	 *
 	 * @return void
 	 */
+
+/*SE AGREGA EL CAMPO REMEMBER_TOKEN PARA PODER USAR EL COMPONENTE AUTH/LOGOUT
+*/
+
 	public function up()
 	{
 		Schema::table('users', function($table) {
 
-		 /*$table->increments('id');
-         $table->string('name');
-         $table->string('password');
-         $table->smallInteger('type');*/
+		
          $table->string('remember_token')->nullable();
 
-/*         $table->timestamps();	
-*/
 		});
 
      }
