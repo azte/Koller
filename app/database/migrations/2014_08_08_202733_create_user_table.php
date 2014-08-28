@@ -18,7 +18,8 @@ class CreateUserTable extends Migration {
             $table->string('name');
             $table->string('password');
             $table->smallInteger('type');
-            
+            $table->string('remember_token')->nullable();
+
             $table->timestamps();
         });
 	}

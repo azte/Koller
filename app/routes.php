@@ -31,3 +31,7 @@ Route::get('reports', array('as' => 'reports', function()
 Route::resource('admin/users', 'Admin_UsersController');
 
 Route::resource('admin/reports', 'Admin_ReportsController');
+
+Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+
+Route::get('logout',['as' => 'logout', 'uses' => 'AuthController@logout']);

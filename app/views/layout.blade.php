@@ -37,14 +37,55 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      @if (Auth::check())
+
+        <ul class = "nav navbar-nav pull-right">
+          <li class = "dropdown">
+            <a class = "dropdown-toggle" data-toggle ="dropdown" href="#">
+              <span class = "icon icon-wh i-profile"></span>Hola {{Auth::user()->name}} <span class = "caret"></span>
+            </a>
+            <ul class = "dropdown-menu">
+              <li><a href="{{route('logout')}}">Salir</a></li>
+
+
+
+            </ul>
+
+          </li>
+
+
+        </ul>
+
+
+
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{route('home')}}">Home</a></li>
         <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
         <li><a href="{{route('admin.users.index')}}">Admin</a></li>
 
       </ul>
-      
+
+      @else
+
+      {{Form::open(['route' => 'login', 'method' => 'POST', 'role' => 'form', 'class' => 'navbar-form navbar-right'])}}
+            
+            @if(Session::has('login_error'))
+
+            <span class="label label-danger">Credenciales no válidas</span>
+
+            @endif
+
+            <div class="form-group">
+                 {{Form::text('name',null, ['class' => 'form-control', 'placeholder' => 'Usuario'])}}
+            </div>
+            <div class="form-group">
+                {{Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password'])}}
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+      {{Form::close()}}
+      @endif  
     </div><!-- /.navbar-collapse -->
+
   </div><!-- /.container-fluid -->
 </nav>
 
