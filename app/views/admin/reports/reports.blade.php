@@ -22,22 +22,34 @@
 					
 
 				</tr>
-		@foreach($reports as $report)
-
 				<tr>
-					<td>{{$report->id}}</td>
-					<td>{{$report->userName}}</td>
-					<td>{{$report->store}}</td>
-					<td>{{$report->comment}}</td>
-					<td>{{$report->tickets}}</td>
-					<td>{{$report->type}}</td>
-					<td>{{$report->subtype}}</td>
-					<td>{{$report->created_at}}</td>
 
+					@foreach($reports as $report)
+					
+					<tr>
+						<td>{{$report->id}}</td>
+						<td>{{$report->userName}}</td>
+						<td>{{$report->store}}</td>
+						<td>{{$report->comment}}</td>
+						<td>{{$report->ticket}}</td>
+						<td>{{$report->store}}</td>
+
+
+
+
+
+					</tr>
 					
 
+
+
+					@endforeach
+
+
 				</tr>
-		@endforeach
+				
+				
+		
 
 
 			</table>
@@ -73,6 +85,7 @@
 	      {{ Form::label('ticket', 'Ticket') }}
 	      {{ Form::text('ticket',null, array('class' => 'form-control')) }}
 	    </div>
+
 	  </div>
 	  {{ Form::button('Crear usuario', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
 	  

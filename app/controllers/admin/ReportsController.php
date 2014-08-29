@@ -10,7 +10,17 @@ class Admin_ReportsController extends \BaseController {
 	public function index()
 	{
 
-		$reports = Report::all();
+		
+/*		$users = User::where('votes', '>', 100)->take(10)->get();
+
+foreach ($users as $user)
+{
+    var_dump($user->name);
+}
+
+*/
+		$id = Auth::user()->id;
+		$reports = Report::where('user_id','=', $id)->get();
 		return View::make('admin/reports/reports')->with('reports', $reports);
 	
 	}
@@ -42,7 +52,7 @@ class Admin_ReportsController extends \BaseController {
 			$id = Auth::user()->id;
 			$report->user_id = $id;
 			
-			$data = Input::only('userName','store','comments','ticket');
+			$data = Input::only('userName','store','comment','ticket');
 
 
 			$report->fill($data);
