@@ -73,10 +73,6 @@
 	      {{ Form::label('ticket', 'Ticket') }}
 	      {{ Form::text('ticket',null, array('class' => 'form-control')) }}
 	    </div>
-	    <div class="form-group col-md-4">
-	      {{ Form::label('user_id', 'ID usuario') }}
-	      {{ Form::text('user_id',null, array('class' => 'form-control')) }}
-	    </div>
 	  </div>
 	  {{ Form::button('Crear usuario', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
 	  

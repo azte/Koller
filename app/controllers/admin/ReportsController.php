@@ -34,9 +34,15 @@ class Admin_ReportsController extends \BaseController {
 	 */
 	public function store()
 	{
-		      
+
+
+
+
 			$report = new Report;
-			$data = Input::all();
+			$id = Auth::user()->id;
+			$report->user_id = $id;
+			
+			$data = Input::only('userName','store','comments','ticket');
 
 
 			$report->fill($data);
