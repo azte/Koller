@@ -57,9 +57,16 @@
         </ul>
 
 
+        <!-- Nav tabs -->
 
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{{route('home')}}">Home</a></li>
+
+
+
+        
+    
+
+      <ul id="myTab" class="nav navbar-nav">
+        <li><a href="{{route('home')}}">Home</a></li>
         <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
         <li><a href="{{route('admin.users.index')}}">Admin</a></li>
 
@@ -113,6 +120,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
     {{ HTML::script('assets/js/admin.js') }}
+  
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+});
+
+
+</script>
+ 
+    
   </body>
 </html>
 
