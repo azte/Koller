@@ -20,5 +20,12 @@ color:green;
 	margin-top: 2em;
 }
 
+#prueba{
+
+	border: solid 1px red;
+	margin: 0 auto;
+	text-align: center;
+	width: 20%;
+}
 
 

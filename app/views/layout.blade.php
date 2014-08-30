@@ -66,9 +66,27 @@
     
 
       <ul id="myTab" class="nav navbar-nav">
-        <li><a href="{{route('home')}}">Home</a></li>
-        <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
-        <li><a href="{{route('admin.users.index')}}">Admin</a></li>
+        
+        @if(URL::current() == URL::route('home'))
+            <li class="active">
+        @else
+            <li>
+        @endif
+              <a href="{{route('home')}}">Home</a>
+            </li>
+        @if(URL::current() == URL::route('admin.reports.index'))  
+            <li class="active">
+        @else
+            <li>
+        @endif      
+              <a href="{{route('admin.reports.index')}}">Reportes</a>
+            </li>
+        @if(URL::current() == URL::route('admin.users.index'))
+          <li class="active">
+        @else
+          <li>
+        @endif    
+          <a href="{{route('admin.users.index')}}">Admin</a></li>
 
       </ul>
 
@@ -109,7 +127,7 @@
     
 
     <footer>
-        <p>&copy; Company 2014</p>
+        <p id="prueba">&copy; Company 2014</p>
     </footer>
 </div> <!-- /container -->
 
