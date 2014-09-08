@@ -23,7 +23,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-	protected $fillable = array('name', 'type', 'password');
+	protected $fillable = array('name','username', 'type', 'password');
 
 
 	public $errors;
@@ -31,6 +31,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function isValid($data)
     {
         $rules = array(
+            'username' => 'required',
             'name' => 'required|min:4|max:40',
             'type'     => 'required',
             'password'  => 'min:6|confirmed'

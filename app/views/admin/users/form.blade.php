@@ -63,6 +63,10 @@
 
 	  <div class="row">
 	  	<div class="form-group col-md-4">
+	      {{ Form::label('username', 'Usuario') }}
+	      {{ Form::text('username',null, array('placeholder' => 'Ej. ccuellar', 'class' => 'form-control')) }}        
+	    </div>
+	  	<div class="form-group col-md-4">
 	      {{ Form::label('name', 'Nombre completo') }}
 	      {{ Form::text('name', null, array('placeholder' => 'Introduce tu nombre y apellido', 'class' => 'form-control')) }}        
 	    </div>

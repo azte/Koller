@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Koller Software</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -32,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">TIBA IT</a>
+      <span id="logo-tiba"><a class="navbar-brand" href="#">TIBA IT</a></span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -127,7 +127,7 @@
     
 
     <footer>
-        <p id="prueba">&copy; Company 2014</p>
+        <p id="prueba">&copy; TIBA IT 2014</p>
     </footer>
 </div> <!-- /container -->
 

@@ -32,12 +32,6 @@
 						<td>{{$report->store}}</td>
 						<td>{{$report->comment}}</td>
 						<td>{{$report->ticket}}</td>
-						<td>{{$report->store}}</td>
-
-
-
-
-
 					</tr>
 					
 
@@ -48,19 +42,19 @@
 
 				</tr>
 				
-				
-		
-
-
 			</table>
 		</div>	
 	</div>
 	
 </div>	
+				
+		
+
+
 
 @stop
 @section('formReport')
-
+<div class="container">
 <h3>Ingresar Reporte</h3>
 	<div class="container container-azt">
 
@@ -90,8 +84,8 @@
 	  {{ Form::button('Crear usuario', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
 	  
 	{{ Form::close() }}
+	</div>
 </div>
-
 @stop
 
 
