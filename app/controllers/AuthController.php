@@ -5,7 +5,7 @@ class AuthController extends BaseController{
 	public function login()
 	{
 		$data = Input::all();
-		$credentials = ['name' => $data['name'], 'password' => $data['password']];
+		$credentials = ['username' => $data['username'], 'password' => $data['password']];
 
 
 		if(Auth::attempt($credentials))

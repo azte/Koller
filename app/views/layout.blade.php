@@ -101,7 +101,7 @@
             @endif
 
             <div class="form-group">
-                 {{Form::text('name',null, ['class' => 'form-control', 'placeholder' => 'Usuario'])}}
+                 {{Form::text('username',null, ['class' => 'form-control', 'placeholder' => 'Usuario'])}}
             </div>
             <div class="form-group">
                 {{Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password'])}}
