@@ -32,6 +32,11 @@
 						<td>{{$report->store}}</td>
 						<td>{{$report->comment}}</td>
 						<td>{{$report->ticket}}</td>
+						<td></td>
+					   	<td></td>
+
+						<td>{{$report->created_at}}</td>
+
 					</tr>
 					
 
@@ -81,7 +86,7 @@
 	    </div>
 
 	  </div>
-	  {{ Form::button('Crear usuario', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
+	  {{ Form::button('Crear Reporte', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
 	  
 	{{ Form::close() }}
 	</div>

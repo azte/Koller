@@ -37,6 +37,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+    <!--IF the user is loged in-->      
+      
       @if (Auth::check())
 
         <ul class = "nav navbar-nav pull-right">
@@ -52,20 +55,12 @@
             </ul>
 
           </li>
-
-
         </ul>
 
 
         <!-- Nav tabs -->
 
-
-
-
-        
-    
-
-      <ul id="myTab" class="nav navbar-nav">
+        <ul id="myTab" class="nav navbar-nav">
         
         @if(URL::current() == URL::route('home'))
             <li class="active">
@@ -90,6 +85,7 @@
 
       </ul>
 
+      <!--IF user is not loged in yet, show de login form-->
       @else
 
       {{Form::open(['route' => 'login', 'method' => 'POST', 'role' => 'form', 'class' => 'navbar-form navbar-right'])}}

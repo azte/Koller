@@ -17,11 +17,16 @@ foreach ($users as $user)
 {
     var_dump($user->name);
 }
-
+		
 */
+		
+		// $reports = Dato::where('DET','=','250')->get();
+
+
 		$id = Auth::user()->id;
 		$reports = Report::where('user_id','=', $id)->get();
 		return View::make('admin/reports/reports')->with('reports', $reports);
+
 	
 	}
 
@@ -47,19 +52,29 @@ foreach ($users as $user)
 
 
 
+			
+			$store = Dato::where('DET','=','250')->firstOrFail();
+			$tiendaBd = $store->DET;
 
 			$report = new Report;
 			$id = Auth::user()->id;
 			$report->user_id = $id;
 			
 			$data = Input::only('userName','store','comment','ticket');
+			$tienda = $data['store'];
+			
+			if ($tiendaBd != $tienda )
+			{
+				Log::warning('Something could be going wrong.');
+			}
+
 
 
 			$report->fill($data);
 			$report->save();
 
-			return Redirect::route('admin.reports.index')->with('report',$report);
-
+/*			return Redirect::route('admin.reports.index')->with('report',$report);
+*/
 
 
 	}
