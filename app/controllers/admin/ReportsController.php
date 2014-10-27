@@ -53,29 +53,30 @@ foreach ($users as $user)
 
 
 			
-			$store = Dato::where('DET','=','250')->firstOrFail();
-			$tiendaBd = $store->DET;
+			// $store = Dato::where('DET','=','250')->firstOrFail();
+			// $tiendaBd = $store->DET;
 
 			$report = new Report;
 			$id = Auth::user()->id;
 			$report->user_id = $id;
 			
 			$data = Input::only('userName','store','comment','ticket');
-			$tienda = $data['store'];
+			// $tienda = $data['store'];
 			
-			if ($tiendaBd != $tienda )
+			if ($report->validarDatosReporte($data))
 			{
-				Log::warning('Something could be going wrong.');
+
+				$report->fill($data);
+				$report->save();
+				return Redirect::route('admin.reports.index')->with('report',$report);
+
+				
 			}
-
-
-
-			$report->fill($data);
-			$report->save();
-
-/*			return Redirect::route('admin.reports.index')->with('report',$report);
-*/
-
+			else
+			{
+				return Redirect::route('admin.reports.index')->withInput()->withErrors($report->errors);
+	
+			}
 
 	}
 
