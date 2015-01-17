@@ -60,7 +60,7 @@ foreach ($users as $user)
 			$id = Auth::user()->id;
 			$report->user_id = $id;
 			
-			$data = Input::only('userName','store','comment','ticket');
+			$data = Input::only('userName','store','comment','ticket','type','subtype');
 			// $tienda = $data['store'];
 			
 			if ($report->validarDatosReporte($data))

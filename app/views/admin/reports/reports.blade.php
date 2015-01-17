@@ -45,9 +45,8 @@
 						<td>{{$report->store}}</td>
 						<td>{{$report->comment}}</td>
 						<td>{{$report->ticket}}</td>
-						<td></td>
-					   	<td></td>
-
+						<td>{{$report->type}}</td>
+						<td>{{$report->subtype}}</td>
 						<td>{{$report->created_at}}</td>
 
 					</tr>
@@ -79,24 +78,33 @@
 		{{ Form::open(array('route' => 'admin.reports.store', 'method' => 'POST'), array('role' => 'form')) }}
 
 	  <div class="row">
-	    <div class="form-group col-md-4">
+	    <div class="form-group col-md-3">
 	      {{ Form::label('userName', 'Usuario') }}
 	      {{ Form::text('userName', null, array('placeholder' => 'Usuario', 'class' => 'form-control')) }}
 	    </div>
-	    <div class="form-group col-md-4">
+	    <div class="form-group col-md-3">
 	      {{ Form::label('store', 'Tienda') }}
 	      {{ Form::text('store', null, array('placeholder' => 'Tienda', 'class' => 'form-control')) }}        
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="form-group col-md-4">
+	    <div class="form-group col-md-3">
 	      {{ Form::label('comment', 'Comentarios') }}
 	      {{ Form::text('comment', null, array('class' => 'form-control')) }}
 	    </div>
-	    <div class="form-group col-md-4">
+	    <div class="form-group col-md-3">
 	      {{ Form::label('ticket', 'Ticket') }}
 	      {{ Form::text('ticket',null, array('class' => 'form-control')) }}
 	    </div>
+	    <div class="form-group col-md-3">
+	      {{ Form::label('type', 'Tipo') }}
+	      {{ Form::select('type', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
+
+<!-- 	      {{ Form::text('type',null, array('class' => 'form-control')) }}
+ -->	</div>
+ 		<div class="form-group col-md-3">
+	      {{ Form::label('subtype', 'Subtipo') }}
+	      {{ Form::select('subtype', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
 
 	  </div>
 	  {{ Form::button('Crear Reporte', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    

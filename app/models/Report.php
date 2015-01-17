@@ -3,7 +3,7 @@
 class Report extends Eloquent {
 
 
-	protected $fillable = array('userName', 'store', 'comment','ticket','user_id');
+	protected $fillable = array('userName', 'store', 'comment','ticket','user_id', 'type', 'subtype');
 
 	public $errors;
 	public function user(){
@@ -19,7 +19,8 @@ class Report extends Eloquent {
             'userName' => 'required',
             'store' => 'numeric|required|min:1|exists:datos,DET',
             'comment'     => 'required|min:2',
-            'ticket'  => 'numeric|min:6'
+            'ticket'  => 'numeric|min:6',
+
         );
 
         $validator = Validator::make($data, $rules);
