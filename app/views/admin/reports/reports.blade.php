@@ -99,19 +99,48 @@
 	    <div class="form-group col-md-3">
 	      {{ Form::label('type', 'Tipo') }}
 	      {{ Form::select('type', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
-
-<!-- 	      {{ Form::text('type',null, array('class' => 'form-control')) }}
- -->	</div>
+	</div>
  		<div class="form-group col-md-3">
 	      {{ Form::label('subtype', 'Subtipo') }}
 	      {{ Form::select('subtype', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
 
 	  </div>
+
+
 	  {{ Form::button('Crear Reporte', array('type' => 'submit', 'class' => 'btn btn-primary')) }}    
 	  
 	{{ Form::close() }}
 	</div>
 </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+ t = $('#type');
+ t.on('change', function(){
+ 	var tcontent = $('#type').val();
+ 	if(tcontent == "L"){
+ 		$('#subtype').css('visibility','visible');
+ 	 }
+ 	else{
+
+ 		$('#subtype').css('visibility','hidden');
+
+
+ 		
+ 	}
+
+ });
+ 
+	// var type = document.getElementById('type');
+	// type.addEventListener('change',function(){
+	// 	alert('lol');
+	// });
+
+
+    
+  </script>
+
+
 @stop
 
 

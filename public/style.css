@@ -24,3 +24,6 @@ color:green;
 	margin-top: 2em;
 }
 
+#subtype{
+	visibility: hidden;
+}
