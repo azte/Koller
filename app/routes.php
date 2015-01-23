@@ -27,6 +27,12 @@ Route::get('reports', array('as' => 'reports', function()
 	return View::make('reports');
 }));
 
+Route::get('admin', array('as' =>'adminMaster',function()
+{
+	return View::make('adminMaster');
+
+}));
+
 
 Route::resource('admin/users',  'Admin_UsersController');
 
