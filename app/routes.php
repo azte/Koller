@@ -34,9 +34,12 @@ Route::get('admin', array('as' =>'adminMaster',function()
 }));
 
 
-Route::resource('admin/users',  'Admin_UsersController');
+
+
 
 Route::resource('admin/reports', 'Admin_ReportsController');
+
+Route::resource('admin/users',  'Admin_UsersController');
 
 Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
 

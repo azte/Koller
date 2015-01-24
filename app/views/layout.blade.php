@@ -74,7 +74,7 @@
         @else
             <li>
         @endif      
-              <a href="{{route('admin.reports.index')}}">Reportes</a>
+              <a href="{{route('admin.reports.create')}}">Reportes</a>
             </li>
         @if(URL::current() == URL::route('adminMaster'))
 <!--         CORREGIR SELECCION DE MENU DESPLEGABLE               -->          
@@ -90,7 +90,7 @@
               
             
             
-              <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
+              <li><a href="{{route('admin.reports.create')}}">Reportes</a></li>
               
             </ul>
           </li>
@@ -129,6 +129,7 @@
  @yield('formUsers')
  @yield('showUsers')
  @yield('formReport')
+ @yield('showReports')
 
 
 <div class="container">

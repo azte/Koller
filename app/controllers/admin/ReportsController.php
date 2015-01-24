@@ -7,6 +7,9 @@ class Admin_ReportsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	
+
+
 	public function index()
 	{
 
@@ -22,11 +25,6 @@ foreach ($users as $user)
 		
 		// $reports = Dato::where('DET','=','250')->get();
 
-
-		$id = Auth::user()->id;
-		$reports = Report::where('user_id','=', $id)->get();
-		return View::make('admin/reports/reports')->with('reports', $reports);
-
 	
 	}
 
@@ -37,8 +35,16 @@ foreach ($users as $user)
 	 * @return Response
 	 */
 	public function create()
+
+
 	{
-		return View::make('admin/reports/reports');
+
+
+		$id = Auth::user()->id;
+		$reports = Report::where('user_id','=', $id)->get();
+		
+		return View::make('admin/reports/reports')->with('reports', $reports);
+
 	}
 
 
@@ -68,13 +74,13 @@ foreach ($users as $user)
 
 				$report->fill($data);
 				$report->save();
-				return Redirect::route('admin.reports.index')->with('report',$report);
+				return Redirect::route('admin.reports.create')->with('report',$report);
 
 				
 			}
 			else
 			{
-				return Redirect::route('admin.reports.index')->withInput()->withErrors($report->errors);
+				return Redirect::route('admin.reports.create')->withInput()->withErrors($report->errors);
 	
 			}
 
