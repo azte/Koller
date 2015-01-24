@@ -69,7 +69,7 @@
         @endif
               <a href="{{route('home')}}">Home</a>
             </li>
-        @if(URL::current() == URL::route('admin.reports.index'))  
+        @if(URL::current() == URL::route('admin.reports.create'))  
             <li class="active">
         @else
             <li>
@@ -90,7 +90,7 @@
               
             
             
-              <li><a href="{{route('admin.reports.create')}}">Reportes</a></li>
+              <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
               
             </ul>
           </li>

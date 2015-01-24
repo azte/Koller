@@ -1,41 +1,55 @@
 @extends('layout')
-@section('showReports')
-	<div class="jumbotron">
-		<div class="container">
+@section('users')
 
-
-			<table class="table table-striped">
+<div class="jumbotron">
+	<div class="container">
+		
+	  <table class="table table-striped">
 	    
 	    <tr>
 	    	<th>ID</th>
-	        <th>Full name</th>
-	        <th>Type</th>
-	        <th>Acciones</th>
+	        <th>Usuario</th>
+	        <th>Tienda</th>
+			<th>Comentarios</th>
+			<th>Ticket</th>
+			<th>Tipo</th>
+			<th>Subtipo</th>
+			<th>Propietario</th>
+
+
+
+
+
+	        
 	    </tr>
 
-	    @foreach($users as $user)
+	    @foreach($reports as $report)
 
 	    <tr>
-	    	<td>{{$user->id}}</td>
-	        <td>{{$user->name}}</td>
-	        <td>{{$user->type}}</td>
-	        <td>
-	          <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-info">
-	              Ver
-	          </a>
-	          <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary">
-	            Editar
-	          </a>
-	          <a href="#" data-id="{{ $user->id }}" class="btn btn-danger btn-delete">
-              Eliminar
-          	  </a>
-	        </td>
+	    	<td>{{$report->id}}</td>
+	    	<td>{{$report->userName}}</td>
+	    	<td>{{$report->store}}</td>
+	    	<td>{{$report->comment}}</td>
+	    	<td>{{$report->ticket}}</td>
+	    	<td>{{$report->type}}</td>
+	    	<td>{{$report->subtype}}</td>
+	    	<td>{{$report->user_id}}</td>
+
+
+
+
+
+
+
+
+
+	        
+	        
 	    </tr>
 	    @endforeach
 	    
 	  </table>
-		</div>
-
 	</div>
+</div>
 
 @stop

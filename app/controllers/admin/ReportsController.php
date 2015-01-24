@@ -13,18 +13,8 @@ class Admin_ReportsController extends \BaseController {
 	public function index()
 	{
 
-		
-/*		$users = User::where('votes', '>', 100)->take(10)->get();
-
-foreach ($users as $user)
-{
-    var_dump($user->name);
-}
-		
-*/
-		
-		// $reports = Dato::where('DET','=','250')->get();
-
+		$reports = Report::all();
+        return View::make('admin/reports/list')->with('reports', $reports);
 	
 	}
 
