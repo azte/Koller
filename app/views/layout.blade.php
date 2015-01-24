@@ -76,12 +76,24 @@
         @endif      
               <a href="{{route('admin.reports.index')}}">Reportes</a>
             </li>
-        @if(URL::current() == URL::route('admin.users.index'))
+        @if(URL::current() == URL::route('adminMaster'))
+<!--         CORREGIR SELECCION DE MENU DESPLEGABLE               -->          
           <li class="active">
         @else
-          <li>
-        @endif    
-          <a href="{{route('admin.users.index')}}">Admin</a></li>
+          <li class="dropdown">
+        @endif 
+            <a class = "dropdown-toggle" data-toggle ="dropdown" href="#">
+              <span class = "icon icon-wh i-profile"></span>Admin<span class = "caret"></span>
+            </a> 
+            <ul class="dropdown-menu">
+              <li><a href="{{route('admin.users.index')}}">Usuarios</a></li>
+              
+            
+            
+              <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
+              
+            </ul>
+          </li>
 
       </ul>
 

@@ -1,11 +1,15 @@
 .container-azt{
-	
+	border: solid red;
 
 }
 
 
 h1{
 	text-align: center;
+}
+
+.jumbotron{
+	border: solid blue;
 }
 
 #logo-tiba a{
