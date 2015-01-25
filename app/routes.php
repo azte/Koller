@@ -33,7 +33,7 @@ Route::get('admin', array('as' =>'adminMaster',function()
 
 }));
 
-
+Route::resource('admin/notices', 'Admin_NoticesController');
 
 Route::post('find',['as' => 'find','uses' => 'FindController@findReport']);
 

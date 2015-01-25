@@ -91,6 +91,8 @@
             
             
               <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
+              <li><a href="{{route('admin.notices.index')}}">News</a></li>
+
               
             </ul>
           </li>
@@ -131,6 +133,7 @@
  @yield('formReport')
  @yield('showReports')
  @yield('showReport')
+ @yield('showNews')
 
 
 <div class="container">

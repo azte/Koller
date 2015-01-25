@@ -1,6 +1,6 @@
 <?php
 
-class New extends Eloquent {
+class Notice extends Eloquent {
 
 public function user(){
 
