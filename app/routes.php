@@ -35,7 +35,7 @@ Route::get('admin', array('as' =>'adminMaster',function()
 
 
 
-
+Route::post('find',['as' => 'find','uses' => 'FindController@findReport']);
 
 Route::resource('admin/reports', 'Admin_ReportsController');
 

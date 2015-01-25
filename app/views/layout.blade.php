@@ -130,6 +130,7 @@
  @yield('showUsers')
  @yield('formReport')
  @yield('showReports')
+ @yield('showReport')
 
 
 <div class="container">

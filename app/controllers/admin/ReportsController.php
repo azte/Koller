@@ -10,6 +10,7 @@ class Admin_ReportsController extends \BaseController {
 	
 
 
+
 	public function index()
 	{
 
@@ -83,9 +84,11 @@ class Admin_ReportsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		
+		
+
 	}
 
 
