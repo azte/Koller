@@ -87,7 +87,6 @@ class Admin_ReportsController extends \BaseController {
 	public function show()
 	{
 		
-		
 
 	}
 

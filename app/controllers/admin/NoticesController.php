@@ -32,8 +32,32 @@ class Admin_NoticesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
-	}
+		
+
+		$notice = new Notice;
+
+		$id = Auth::user()->id;
+		$notice->user_id = $id;
+
+        // Obtenemos la data enviada por el usuario
+        $data = Input::all();
+     	 
+        // Revisamos si la data es válido
+        if ($notice->isValid($data))
+        {
+            // Si la data es valida se la asignamos al usuario
+            $notice->fill($data);
+            // Guardamos el usuario
+            $notice->save();
+            // Y Devolvemos una redirección a la acción show para mostrar el usuario
+            return Redirect::route('admin.notices.create');
+        }
+        else
+        {
+            // En caso de error regresa a la acción create con los datos y los errores encontrados
+			return Redirect::route('admin.notices.create')->withInput()->withErrors($notice->errors);
+        }	
+    }
 
 
 	/**

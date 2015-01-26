@@ -5,7 +5,7 @@
 	<div class="container">
 
 
-	{{Form::model($notice, array('route' => 'admin.reports.store', 'method' => 'POST'), array('role' => 'form'))}}
+	{{Form::model($notice, array('route' => 'admin.notices.store', 'method' => 'POST'), array('role' => 'form'))}}
 		  @include ('admin/errors', array('errors' => $errors))
 		<div class="row">
 		  	<div class="form-group col-md-4">
