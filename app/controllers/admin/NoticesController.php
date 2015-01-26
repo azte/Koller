@@ -21,8 +21,8 @@ class Admin_NoticesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
-	}
+		$notice = new Notice;
+    	return View::make('admin/notices/form')->with('notice', $notice);	}
 
 
 	/**

@@ -4,6 +4,10 @@
 @extends('layout')
 @section('showNews')
 <div class="jumbotron">
+	<p>
+		<a href="{{ route('admin.notices.create') }}" class="btn btn-primary">Crear Aviso</a>
+  	</p>
+  
 	<table class="table table-striped">
 	    
 	    <tr>

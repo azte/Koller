@@ -124,7 +124,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
- @yield('adminMaster')
  @yield('content')
  @yield('reports')
  @yield('users')
@@ -134,6 +133,7 @@
  @yield('showReports')
  @yield('showReport')
  @yield('showNews')
+ @yield('formNotice')
 
 
 <div class="container">
