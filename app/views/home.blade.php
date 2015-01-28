@@ -1,6 +1,7 @@
+<link href="{{ asset('style.css')}}" rel="stylesheet">
+
+
 @extends('layout')
-
-
 @section('content')
 
 <?php
@@ -19,17 +20,21 @@
 
     <div class="container">
       <!-- Example row of columns -->
+  
       
     @foreach($notices as $notice)
 
-      <div class="row">
+   
         <div class="col-md-4">
           <h2>{{$notice->title}}</h2>
-          <p> {{$notice->content}} </p>
+          <p>{{$notice->content}}</p>
+          <p>{{$notice->created_at}}</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-    @endforeach    
-      <hr>
+  
 
-    </div> <!--Container--> 
+   
+    @endforeach   
+     </div> <!--Container-->  
+
 @stop

@@ -4,7 +4,7 @@
 <div class="jumbotron">
 	<div class="container">
 
-
+	<H2>AVISO</H2>
 	{{Form::model($notice, array('route' => 'admin.notices.store', 'method' => 'POST'), array('role' => 'form'))}}
 		  @include ('admin/errors', array('errors' => $errors))
 		<div class="row">

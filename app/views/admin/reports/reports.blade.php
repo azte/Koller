@@ -98,11 +98,66 @@
 	    </div>
 	    <div class="form-group col-md-3">
 	      {{ Form::label('type', 'Tipo') }}
-	      {{ Form::select('type', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
+	      {{ Form::select('type', 
+
+	      			array(
+	      				   'Seguimiento' => 'Seguimiento',
+	      				   'Abandonada' => 'Abandonada',
+	      				   'Cortada' => 'Cortada',
+	      				   'Informes' => 'Informes',
+	      				   'Seguimiento' => 'Seguimiento',
+	      				   'Transferencia' => 'Transferencia',
+	      				   'Ticket Informativo' => 'Ticket Informativo',
+	      				   'Incidente' => 'Incidente',
+	      				   'Requerimiento' => 'requerimiento',
+
+
+
+	      				   ), 
+
+
+
+
+	      				   null, array('class' => 'form-control'))}}
 	</div>
  		<div class="form-group col-md-3">
 	      {{ Form::label('subtype', 'Subtipo') }}
-	      {{ Form::select('subtype', array('L' => 'Large', 'S' => 'Small'), null, array('class' => 'form-control'))}}
+	      {{ Form::select('subtype', 
+
+
+	      			array(
+	      				  'Promociones' => 'Promociones',
+	      				  'Recargas' => 'Recargas',
+	      				  'Extensión' => 'Extension',
+	      				  'Error Operativo' => 'Error Operativo',
+	      				  'Consityf' => 'Consityf',
+	      				  'Recibo' => 'Recibo',
+	      				  'Internet Explorer' => 'Internet Explorer',
+	      				  'Corte' => 'Corte',
+	      				  'IDI' => 'IDI',
+	      				  'Arqueo' => 'Arqueo',
+	      				  'Inc. Gral. Recibo' => 'Inc. Gral. Recibo',
+	      				  'Inc. Gral. Recargas' => 'Inc. Gral. Recargas',
+	      				  'Inc. Gral. J&P' => 'Inc. Gral. J&P',
+	      				  'TDC/TDD' => 'TDC/TDD',
+	      				  'Venezia Pos' => 'Venezia Pos',
+	      				  'SIPOS' => 'SIPOS',
+	      				  'IVA' => 'IVA',
+	      				  'Hoja de Costeo' => 'Hoja de Costeo',
+	      				  'Orden De Surtimiento' => 'Orden de Surtimiento',
+	      				  'Otros' => 'Otros'
+
+
+
+
+
+
+
+
+
+	      				  ), 
+
+	      			null, array('class' => 'form-control'))}}
 
 	  </div>
 
@@ -118,7 +173,7 @@
  t = $('#type');
  t.on('change', function(){
  	var tcontent = $('#type').val();
- 	if(tcontent == "L"){
+ 	if(tcontent == "Informes"){
  		$('#subtype').css('visibility','visible');
  	 }
  	else{
