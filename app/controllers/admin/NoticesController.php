@@ -41,6 +41,7 @@ class Admin_NoticesController extends \BaseController {
 
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
+
      	 
         // Revisamos si la data es válido
         if ($notice->isValid($data))
@@ -50,7 +51,9 @@ class Admin_NoticesController extends \BaseController {
             // Guardamos el usuario
             $notice->save();
             // Y Devolvemos una redirección a la acción show para mostrar el usuario
-            return Redirect::route('admin.notices.create');
+            $notices = Notice::all();
+            return View::make('home')->with('notices', $notices);
+            // return Redirect::route('admin.notices.create');
         }
         else
         {
