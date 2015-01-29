@@ -32,8 +32,10 @@ class Admin_ReportsController extends \BaseController {
 
 
 		$id = Auth::user()->id;
-		$reports = Report::where('user_id','=', $id)->get();
-		
+		$date = date('Y-m-d');
+		var_dump($date);
+
+		$reports = Report::where('user_id','=', $id)->where('created_at','LIKE',"%$date%")->get();
 		return View::make('admin/reports/reports')->with('reports', $reports);
 
 	}

@@ -125,7 +125,7 @@
 	      {{ Form::select('subtype', 
 
 
-	      			array(
+	      			array('Null' => 'Null',
 	      				  'Promociones' => 'Promociones',
 	      				  'Recargas' => 'Recargas',
 	      				  'Extensión' => 'Extension',
