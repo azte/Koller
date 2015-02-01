@@ -142,7 +142,7 @@ class Admin_ReportsController extends \BaseController {
       		}
       	else{
 
-      			return Redirect::route('admin.reports.show', $report->id)->withInput()->withErrors($report->errors);
+      			return Redirect::route('admin.reports.edit', $report->id)->withInput()->withErrors($report->errors);
 
       	}
 
