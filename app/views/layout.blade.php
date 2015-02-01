@@ -91,7 +91,7 @@
             
             
               <li><a href="{{route('admin.reports.index')}}">Reportes</a></li>
-              <li><a href="{{route('admin.notices.index')}}">News</a></li>
+              <li><a href="{{route('admin.notices.index')}}">Avisos</a></li>
 
               
             </ul>

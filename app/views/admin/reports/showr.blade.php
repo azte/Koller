@@ -1,7 +1,7 @@
 @extends('layout')
 @section('showr')
 <div class="jumbotron">
-	<h1>Reporte Actualizado</h1>
+	<h2>Reporte Actualizado</h2>
 
 	<div class="container">
 		<table class="table">

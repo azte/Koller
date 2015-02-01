@@ -5,8 +5,9 @@
 @section('content')
 
 <?php
- 
-  $notices = Notice::all();
+  
+
+  $notices = Notice::orderBy('id','DESC')->paginate(3);
 
 ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -34,7 +35,9 @@
   
 
    
-    @endforeach   
+    @endforeach 
+     
      </div> <!--Container-->  
-
+    <div class="container">{{$notices->links() }}</div>
+  
 @stop

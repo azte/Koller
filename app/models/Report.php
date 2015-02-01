@@ -4,7 +4,7 @@ class Report extends Eloquent {
 
 
 	protected $fillable = array('userName', 'store', 'comment','ticket','user_id', 'type', 'subtype');
-
+    protected $perPage = 3;
 	public $errors;
 	public function user(){
 
