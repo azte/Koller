@@ -29,7 +29,7 @@
           <h2>{{$notice->title}}</h2>
           <p>{{$notice->content}}</p>
           <p>{{$notice->created_at}}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">Ver Detalles &raquo;</a></p>
         </div>
   
 

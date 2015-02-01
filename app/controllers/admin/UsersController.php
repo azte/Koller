@@ -119,6 +119,7 @@ class Admin_UsersController extends \BaseController {
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
         
+        
         // Revisamos si la data es válido
         // Revisamos si la data es válida y guardamos en ese caso
         if ($user->validAndSave($data))

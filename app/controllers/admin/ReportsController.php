@@ -86,9 +86,11 @@ class Admin_ReportsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show()
+	public function show($id)
 	{
 		
+		$idreport = Report::find($id);
+		return View::make('admin/reports/showr')->with('idreport', $idreport);
 
 	}
 
@@ -101,7 +103,14 @@ class Admin_ReportsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		
+		$report = Report::find($id);
+		if (is_null ($report))
+			{
+				App::abort(404);
+			}
+
+				return View::make('admin/reports/form')->with('report', $report);	
 	}
 
 
@@ -113,8 +122,35 @@ class Admin_ReportsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-	}
+			
+		
+        // Creamos un nuevo objeto para nuestro nuevo usuario
+        $report = Report::find($id);
+
+        // Si el usuario no existe entonces lanzamos un error 404 :(
+        if (is_null ($report))
+        {
+            App::abort(404);
+        }
+        
+        // Obtenemos la data enviada por el usuario
+        $data = Input::all();
+      	if($report->validAndSafe($data))
+      		{
+
+				return Redirect::route('admin.reports.show', array($report->id));	
+      		}
+      	else{
+
+      			return Redirect::route('admin.reports.show', $report->id)->withInput()->withErrors($report->errors);
+
+      	}
+
+
+        
+        // Revisamos si la data es válido
+        
+}		
 
 
 	/**

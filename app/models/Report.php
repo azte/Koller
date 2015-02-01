@@ -37,4 +37,18 @@ class Report extends Eloquent {
 
 	}
 
+    public function validAndSafe($data)
+    {
+        if($this->validarDatosReporte($data))
+        {
+            $this->fill($data);
+            $this->save();
+            return true;
+        }
+        return false;
+
+    }
+
+   
+
 }

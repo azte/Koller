@@ -134,6 +134,8 @@
  @yield('showReport')
  @yield('showNews')
  @yield('formNotice')
+ @yield('formedit')
+ @yield('showr')
 
 
 <div class="container">
