@@ -51,9 +51,7 @@ class Admin_NoticesController extends \BaseController {
             // Guardamos el usuario
             $notice->save();
             // Y Devolvemos una redirección a la acción show para mostrar el usuario
-            $notices = Notice::all();
-            return View::make('home')->with('notices', $notices);
-            // return Redirect::route('admin.notices.create');
+            return Redirect::route('home');
         }
         else
         {
