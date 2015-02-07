@@ -136,6 +136,9 @@
  @yield('formNotice')
  @yield('formedit')
  @yield('showr')
+ @yield('indexQuerys')
+ @yield('showQuerys')
+
 
 
 <div class="container">

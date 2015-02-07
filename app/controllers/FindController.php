@@ -1,6 +1,6 @@
 <?php
 
-class FindController extends \BaseController
+class FindController extends BaseController
 {
 
 	public function findReport(){

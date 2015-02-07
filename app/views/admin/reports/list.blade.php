@@ -23,6 +23,10 @@
 
 
 	    	</div>
+	    	<div class="form-group col-md-1">
+	    		<a class='btn btn-primary btn-sm' href="{{route('query')}}">CONSULTAS</a>
+	    	</div>
+
 	    </div>
 
 

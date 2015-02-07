@@ -35,7 +35,7 @@
 		    </div>
 		  	<div class="form-group col-md-4">
 		      {{ Form::label('content', 'Contenido') }}
-		      {{ Form::text('content', null, array('placeholder' => 'Contenido', 'class' => 'form-control')) }}        
+		      {{ Form::textarea('content', null, array('placeholder' => 'Contenido', 'class' => 'form-control')) }}        
 		    </div>
 		    
 		  </div>

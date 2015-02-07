@@ -33,6 +33,10 @@ Route::get('admin', array('as' =>'adminMaster',function()
 
 }));
 
+Route::post('queryBuilder',['as' => 'queryBuilder','uses' =>'QueryController@query']);
+
+Route::get('query',['as' => 'query','uses' =>'QueryController@index']);
+
 Route::resource('admin/notices', 'Admin_NoticesController');
 
 Route::post('find',['as' => 'find','uses' => 'FindController@findReport']);

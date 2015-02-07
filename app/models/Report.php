@@ -17,7 +17,7 @@ class Report extends Eloquent {
 
         $rules = array(
             'userName' => 'required',
-            'store' => 'numeric|required|min:1|exists:datos,DET',
+            'store' => 'numeric|required|exists:datos,DET',
             'comment'     => 'required|min:2',
             'ticket'  => 'numeric|min:6',
 
