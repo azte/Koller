@@ -15,10 +15,30 @@
 		    <tr>
 		    	<th>ID</th>
 				<th>Titulo</th>
-				<th>Propietario<th>
 				<th>Contenido</th>
 				<th>Fecha</th>
+				<th>Tool</th>
+
 			</tr>
+		@foreach($notices as $notice)
+			<tr>
+				<td>{{$notice->id}}</td>
+				<td>{{$notice->title}}</td>
+				<td>{{$notice->content}}</td>
+				<td>{{$notice->updated_at}}</td>
+				<td>
+					<a href="{{ route('admin.notices.edit', $notice->id) }}" class="btn btn-info">
+		              Editar
+					</a>
+	          	</td>
+				
+
+
+
+
+			</tr>
+
+		@endforeach
 
 		</table>
 	</div>

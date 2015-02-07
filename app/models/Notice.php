@@ -34,5 +34,24 @@ public function isValid($data)
         return false;
     }
 
+public function validAndSafe($data)
+    {
+        // Revisamos si la data es válida
+        if ($this->isValid($data))
+        {
+            // Si la data es valida se la asignamos al usuario
+            $this->fill($data);
+            // Guardamos el usuario
+            $this->save();
+            
+            return true;
+        }
+        
+        return false;
+    }
+
+
+
+
 
 }

@@ -9,8 +9,8 @@ class Admin_NoticesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$news = Notice::all();
-        return View::make('admin/notices/show')->with('news', $news);
+		$notices = Notice::all();
+        return View::make('admin/notices/show')->with('notices', $notices);
 	}
 
 
@@ -22,7 +22,8 @@ class Admin_NoticesController extends \BaseController {
 	public function create()
 	{
 		$notice = new Notice;
-    	return View::make('admin/notices/form')->with('notice', $notice);	}
+    	return View::make('admin/notices/form')->with('notice', $notice);	
+    }
 
 
 	/**
@@ -81,8 +82,13 @@ class Admin_NoticesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-	}
+		$notice = Notice::find($id);
+			if (is_null ($notice))
+				{
+					App::abort(404);
+				}
+
+			return View::make('admin/notices/form')->with('notice', $notice);		}
 
 
 	/**
@@ -93,8 +99,31 @@ class Admin_NoticesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-	}
+		$notice = Notice::find($id);
+
+        // Si el usuario no existe entonces lanzamos un error 404 :(
+        if (is_null ($notice))
+        {
+            App::abort(404);
+        }
+        
+        // Obtenemos la data enviada por el usuario
+        $data = Input::all();
+      	if($notice->validAndSafe($data))
+      		{
+
+				return Redirect::route('home');	
+      		}
+      	else{
+
+      			return Redirect::route('admin.notices.edit', $notice->id)->withInput()->withErrors($notice->errors);
+
+      	}
+
+
+
+
+    }
 
 
 	/**
