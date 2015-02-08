@@ -11,27 +11,31 @@ class QueryController extends BaseController
 
 	public function query()
 	{
-		
-		$user = Input::get('user');
-		$date = Input::get('date');
-		$store = Input::get('store');
-		
 
-        $reports = DB::table('reports')
-                    ->Where('user_id', '=',$user)
-                    ->Where('created_at', 'LIKE',"%$date%")
-                    ->Where('store', '=',$store)
+		$query = DB::table('reports');
 
-                    ->get();
-		
-		
+		if(Input::has('user')){
+		  
+		  $user = Input::get('user');
+		  $query->where('user_id', '=', $user);
+		}
 
-		// $reports = Report::where('user_id','=',$user)->where('created_at','LIKE',"%$date%")->where('store','=',$store)->get();
-		
+		if(Input::has('store')){
+		  
+		  $store = Input::get('store');
+		  $query->where('store', '=', $store);
+		}
+
+		if(Input::has('date')){
+		  
+		  $date = Input::get('date');
+		  $query->where('created_at', 'like', "%$date%");
+		  
+		}
+
+
+		$reports = $query->get();
 		return View::make('admin/reports/showQuerys')->with('reports', $reports);
-
-
-
 
 
 

@@ -16,8 +16,9 @@
 		<div class="container">
 			<h3>Consultas</h3>
 			<h4>Usuario</h4>
+
 	
-	{{ Form::select('user', $usuarios, array('class' => 'form-control')) }}
+	{{ Form::select('user', array('' => 'Seleccione') + $usuarios,'default',array('class' => 'form-control')) }}
 	{{ Form::text('date',null,array('placeholder' => 'AAAA/MM/DD'))}}
 	{{ Form::text('store',null,array('placeholder' => 'Tienda'))}}
 
