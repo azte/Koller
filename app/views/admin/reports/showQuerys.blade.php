@@ -1,3 +1,4 @@
+<link href="{{ asset('style.css')}}" rel="stylesheet">
 
 
 @extends('layout')
@@ -7,6 +8,7 @@
 		<div class="container-azt">
 			<div class="table-responsive">
 			<table class="table table-striped">
+				<h2>Resultados</h2>
 				<tr>
 					<th>Reporte</th>
 					<th>Usuario</th>
@@ -18,7 +20,7 @@
 					<th>Fecha</th>
 				
 				</tr>
-				<tr>
+				
 
 					@foreach($reports as $report)
 					
@@ -40,12 +42,12 @@
 					@endforeach
 
 
-				</tr>
+				
 				
 			</table>
 		</div>
 	</div>
 
-
+</div>
 </div>
 @stop

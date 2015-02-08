@@ -7,19 +7,18 @@
 <?php
   
 
-  $notices = Notice::orderBy('id','DESC')->paginate(3);
+  $notices = Notice::orderBy('id','DESC')->paginate(6);
 
 ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1>Mesa de Ayuda</h1>
-        <p>Contenido SLIDES, PROMOCIONES. Aqui se despliga el contenido dinámico</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Ver más &raquo;</a></p>
-      </div>
-    </div>
+        <h2>Avisos</h2>
+      
+    
 
-    <div class="container">
+  
       <!-- Example row of columns -->
   
       
@@ -37,7 +36,8 @@
    
     @endforeach 
      
-     </div> <!--Container-->  
+    </div>
     <div class="container">{{$notices->links() }}</div>
-  
+    
+    </div>
 @stop

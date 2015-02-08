@@ -31,3 +31,25 @@ color:green;
 #subtype{
 	visibility: hidden;
 }
+
+
+.col-md-4{
+	background: white;
+	border: dashed 1px gray;
+	border-radius: 5px;
+	min-height: 200px;
+	max-height: 100px;
+	overflow: auto;
+	
+}
+
+
+.col-md-4 h2{
+	text-align: center;
+
+}
+
+
+
+
+
